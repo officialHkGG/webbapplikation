@@ -8,16 +8,28 @@
 </head>
 <body>
   <h1>Välkommen till vår webbbutik</h1>
-  <div class="products">
-   
-    <div class="product">
-      <img src="product1.jpg" alt="Produkt 1">
-      <h2>Produkt 1</h2>
-      <p>Beskrivning av Produkt 1</p>
-      <p>Pris: 100 kr</p>
-    </div>
-    
-  </div>
+  <div id="products"></div>
+  <script>
+    fetch('https://fakestoreapi.com/products')
+    .then(response => response.json())
+    .then(products => {
+      const productsContainer = document.getElementById('products');
+      products.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.innerHTML = `
+          <h2>${product.title}</h2>
+          <img src="${product.image}" alt="${product.title}">
+          <p>Pris: ${product.price}</p>
+          <p>Kategori: ${product.category}</p>
+          <p>Beskrivning: ${product.description}</p>
+        `;
+        productsContainer.appendChild(productElement);
+      });
+    })
+    .catch(error => {
+      console.error('Det uppstod ett fel vid hämtning av produkter:', error);
+    });
+  </script>
   <a href="order.html">Gå till beställning</a>
 </body>
 </html>
