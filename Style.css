@@ -1,7 +1,7 @@
 /* Grundläggande stilar för layout */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
+  margin-left: 100px;
   padding: 20px;
 }
 
@@ -20,7 +20,8 @@ h1 {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  max-width: 100px; /* Adjust the maximum width of each product */
+  size: auto;
+  max-width: 300px; /* Adjust the maximum width of each product */
 }
 
 .product h2 {
@@ -28,7 +29,7 @@ h1 {
 }
 
 .product img {
-  max-width: 80%; /* Ensure images don't exceed the width of their container */
+  max-width: 100%; /* Ensure images don't exceed the width of their container */
   height: auto; /* Maintain aspect ratio */
 }
 

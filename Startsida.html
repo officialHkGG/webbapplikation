@@ -23,6 +23,7 @@
           <p>Pris: ${product.price}</p>
           <p>Kategori: ${product.category}</p>
           <p>Beskrivning: ${product.description}</p>
+          <button type="button">Order</button>
         `;
         productsContainer.appendChild(productElement);
       });
@@ -31,6 +32,5 @@
       console.error('Det uppstod ett fel vid hämtning av produkter:', error);
     });
   </script>
-  <a href="order.html">Gå till beställning</a>
 </body>
 </html>
