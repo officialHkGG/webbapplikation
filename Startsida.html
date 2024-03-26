@@ -23,14 +23,20 @@
           <p>Pris: ${product.price}</p>
           <p>Kategori: ${product.category}</p>
           <p>Beskrivning: ${product.description}</p>
+          <button type="button" class="order-button">Order</button>
         `;
         productsContainer.appendChild(productElement);
+      });
+      const orderButtons = document.querySelectorAll('.order-button');
+      orderButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          window.location.href = 'order.html';
+        });
       });
     })
     .catch(error => {
       console.error('Det uppstod ett fel vid hämtning av produkter:', error);
     });
   </script>
-  <a href="order.html">Gå till beställning</a>
 </body>
 </html>

@@ -20,7 +20,7 @@ h1 {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  max-width: 100px; /* Adjust the maximum width of each product */
+  max-width: 300px; /* Adjust the maximum width of each product */
 }
 
 .product h2 {
@@ -28,12 +28,12 @@ h1 {
 }
 
 .product img {
-  max-width: 80%; /* Ensure images don't exceed the width of their container */
+  max-width: 100%; /* Ensure images don't exceed the width of their container */
   height: auto; /* Maintain aspect ratio */
 }
 
 .product p {
-  font-size: 10px; /* Adjust the font size for product details */
+  font-size: 9px; /* Adjust the font size for product details */
 }
 
 form {
