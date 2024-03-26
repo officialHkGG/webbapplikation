@@ -16,6 +16,7 @@
       const productsContainer = document.getElementById('products');
       products.forEach(product => {
         const productElement = document.createElement('div');
+        productElement.classList.add('product');
         productElement.innerHTML = `
           <h2>${product.title}</h2>
           <img src="${product.image}" alt="${product.title}">
