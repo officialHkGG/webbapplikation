@@ -1,7 +1,7 @@
 /* Grundläggande stilar för layout */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
+  margin-left: 100px;
   padding: 20px;
 }
 
@@ -20,6 +20,10 @@ h1 {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+<<<<<<< HEAD
+=======
+  size: auto;
+>>>>>>> 610564c18bf039dc1cf483b440f2ba0559abd224
   max-width: 300px; /* Adjust the maximum width of each product */
 }
 
