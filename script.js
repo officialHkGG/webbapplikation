@@ -34,8 +34,8 @@ function createProductElement(product) {
       const target = event.target;
       if (target.classList.contains('order-button')) {
         const productTitle = target.closest('.product').querySelector('h2').textContent;
-        localStorage.setItem('selectedProduct', productTitle); // Store the selected product's title in localStorage
-        window.location.href = 'order.html'; // Redirect to the order form page
+        localStorage.setItem('selectedProduct', productTitle); 
+        window.location.href = 'order.html'; 
       }
     });
   }
