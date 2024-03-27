@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beställning</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap1.css">
 </head>
 <body>
   <h1>Fyll i din beställning</h1>
@@ -16,8 +16,14 @@
     <label for="email">E-post:</label>
     <input type="email" id="email" required>
     <label for="address">Leveransadress:</label>
-    <textarea id="address" required></textarea>
-    <label for="product" id="productLabel">Product:</label>
+    <textarea id="address"></textarea>
+    <label for="product" id="productLabel">Produkt:</label>
+    <button type="submit" id="orderButton">Beställning</button>
+    <div id="confirmationMessage" style="display: none;">
+      <h1>Din beställning är mottagen!</h1>
+      <p>Tack för din beställning.</p>
+      <button onclick="redirectToHomePage('startsidan.html')">Tillbaka till startsidan</button>
+    </div>
   </form>
   <script src="script.js"></script>
 </body>
