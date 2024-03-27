@@ -7,7 +7,7 @@ function fetchAndDisplayProducts() {
         const productElement = createProductElement(product);
         productsContainer.appendChild(productElement);
       });
-      addOrderButtonListeners(); // Add event listener after appending products
+      addOrderButtonListeners();
     })
     .catch(error => {
       console.error('An error occurred while fetching products:', error);
@@ -28,18 +28,17 @@ function createProductElement(product) {
 
   return productElement;
 }
-
-function addOrderButtonListeners() {
-  const productsContainer = document.getElementById('products');
-  productsContainer.addEventListener('click', function(event) {
-    const target = event.target;
-    if (target.classList.contains('order-button')) {
-      const productTitle = target.closest('.product').querySelector('h2').textContent;
-      localStorage.setItem('productName', productTitle); // Store the product name in localStorage
-      window.location.href = 'order.html';
-    }
-  });
-}
+  function addOrderButtonListeners() {
+    const productsContainer = document.getElementById('products');
+    productsContainer.addEventListener('click', function(event) {
+      const target = event.target;
+      if (target.classList.contains('order-button')) {
+        const productTitle = target.closest('.product').querySelector('h2').textContent;
+        localStorage.setItem('selectedProduct', productTitle); // Store the selected product's title in localStorage
+        window.location.href = 'order.html'; // Redirect to the order form page
+      }
+    });
+  }
 
 function validateForm() {
   const name = document.getElementById('name').value.trim();
@@ -81,7 +80,7 @@ function validateForm() {
     return false;
   }
 
-  // Additional validation for Swedish address and postal code
+  
   const swedishAddressRegex = /^.{2,50}$/;
   const swedishPostalCodeRegex = /^\d{5}$/;
 
@@ -90,19 +89,18 @@ function validateForm() {
     return false;
   }
 
-  return true; // Form is valid
+  return true; 
 }
 
 function submitOrderForm(event) {
-  event.preventDefault(); // Prevent default form submission
+  event.preventDefault(); 
   if (validateForm()) {
-    // Form is valid, proceed with submission
-    alert('Din beställning är mottagen! Tack för din beställning.'); // Confirmation message
+    
+    alert('Din beställning är mottagen! Tack för din beställning.'); 
 
-    // Clear the form fields after submission (optional)
     document.getElementById('orderForm').reset();
 
-    // Redirect back to the start page after a brief delay
+    
     setTimeout(function() {
       window.location.href = 'Startsida.html';
     }, 3000);
@@ -116,16 +114,16 @@ window.onload = function() {
   const orderForm = document.getElementById('orderForm');
   orderForm.addEventListener('submit', submitOrderForm);
 };
-// Function to handle scroll event
+
 window.onscroll = function() {
-  // Get the slider element
+  
   var slider = document.getElementById("slider");
   
-  // If the user scrolls down, show the slider
+ 
   if (window.scrollY > 20) {
     slider.classList.add("show");
   } else {
-    // Otherwise, hide the slider
+    
     slider.classList.remove("show");
   }
 }
