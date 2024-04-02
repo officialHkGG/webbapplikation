@@ -96,13 +96,20 @@
       <input type="text" id="name" required>
 
       <label for="phone">Telefon:</label>
-      <input type="tel" id="phone" required>
+      <input type="Tel" id="phone" required>
 
       <label for="email">E-post:</label>
       <input type="email" id="email" required>
 
-      <label for="address">Leveransadress:</label>
+      <label for="address">Gatuadress:</label>
       <textarea id="address" required></textarea>
+
+      <label for="ort">Ort</label>
+      <textarea id="ort" required></textarea>
+
+      <label for="Postnummer">Postnummer</label>
+      <textarea id="Postnummer" required></textarea>
+      
 
       <label for="product">Produkt:</label>
       <input type="text" id="product" required readonly>
@@ -114,9 +121,11 @@
         <p>Du har beställt: <span id="orderedProduct"></span></p>
         <p>Tack för din beställning.</p>
         <button onclick="redirectToHomePage('index.html')">Tillbaka till startsidan</button>
+        
       </div>
     </form>
   </div>
+  
 
   <script>
     
