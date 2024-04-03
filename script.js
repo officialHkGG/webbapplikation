@@ -81,13 +81,13 @@ if (!cityRegex.test(city)) {
 }
 
   
-  const swedishAddressRegex = /^.{2,50}$/;
-  const swedishPostalCodeRegex = /^\d{5}$/;
+  //const swedishAddressRegex = /^.{2,50}$/;
+ // const swedishPostalCodeRegex = /^\d{5}$/;
 
-  if (!swedishAddressRegex.test(address) || !swedishPostalCodeRegex.test(postalCode)) {
-    alert('Please enter a valid Swedish address and postal code.');
-    return false;
-  }
+  //if (!swedishAddressRegex.test(address) || !swedishPostalCodeRegex.test(postalCode)) {
+   // alert('Please enter a valid Swedish address and postal code.');
+  //  return false;
+ // }
 
   return true; 
 }
