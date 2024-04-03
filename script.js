@@ -97,7 +97,7 @@ function submitOrderForm(event) {
   if (validateForm()) {
 
     document.getElementById('orderForm').reset();
-    const orderedProduct = document.getElementById("product").value;
+    const orderedProduct = localStorage.getItem('selectedProduct');
 
     document.getElementById("orderedProduct").textContent = orderedProduct;
     document.getElementById("confirmationMessage").style.display = "block";
