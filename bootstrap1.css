@@ -11943,3 +11943,26 @@ button {
 .product:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
+.slider {
+  position: fixed;
+  top: -5px; 
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  transition: top 0.3s; 
+}
+
+.slider.show {
+  top: 0; 
+}
+
+h1 {
+  margin-top: 100px; 
+}
+
+#products {
+  
+}
