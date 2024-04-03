@@ -50,35 +50,35 @@ function validateForm() {
 
   const nameRegex = /^[A-Za-z\s]{2,50}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^[\d()-]{0,50}$/;
+  const phoneRegex = /^\d{10,50}$/;
   const addressRegex = /^.{2,50}$/;
   const postalCodeRegex = /^\d{5}$/;
   const cityRegex = /^.{2,50}$/;
 
-  if (!nameRegex.test(name)) {
-    alert('Please enter a valid name (2-50 characters).');
-    return false;
-  }
-  if (!emailRegex.test(email)) {
-    alert('Please enter a valid email address (max 50 characters).');
-    return false;
-  }
-  if (!phoneRegex.test(phone)) {
-    alert('Please enter a valid phone number (max 50 characters).');
-    return false;
-  }
-  if (!addressRegex.test(address)) {
-    alert('Please enter a valid address (2-50 characters).');
-    return false;
-  }
-  if (!postalCodeRegex.test(postalCode)) {
-    alert('Please enter a valid postal code (exactly 5 digits).');
-    return false;
-  }
-  if (!cityRegex.test(city)) {
-    alert('Please enter a valid city (2-50 characters).');
-    return false;
-  }
+if (!nameRegex.test(name)) {
+  alert('Please enter a valid name (2-50 characters, alphabetic characters and spaces only).');
+  return false;
+}
+if (!emailRegex.test(email)) {
+  alert('Please enter a valid email address.');
+  return false;
+}
+if (!phoneRegex.test(phone)) {
+  alert('Please enter a valid phone number (10-50 digits).');
+  return false;
+}
+if (!addressRegex.test(address)) {
+  alert('Please enter a valid address (2-50 characters).');
+  return false;
+}
+if (!postalCodeRegex.test(postalCode)) {
+  alert('Please enter a valid postal code (exactly 5 digits).');
+  return false;
+}
+if (!cityRegex.test(city)) {
+  alert('Please enter a valid city (2-50 characters).');
+  return false;
+}
 
   
   const swedishAddressRegex = /^.{2,50}$/;
@@ -95,14 +95,15 @@ function validateForm() {
 function submitOrderForm(event) {
   event.preventDefault(); 
   if (validateForm()) {
-    
-    alert('Din beställning är mottagen! Tack för din beställning.'); 
 
     document.getElementById('orderForm').reset();
+    const orderedProduct = document.getElementById("product").value;
 
+    document.getElementById("orderedProduct").textContent = orderedProduct;
+    document.getElementById("confirmationMessage").style.display = "block";
     
     setTimeout(function() {
-      window.location.href = 'Startsida.html';
+      window.location.href = 'index.html';
     }, 3000);
   }
 }
@@ -127,3 +128,25 @@ window.onscroll = function() {
     slider.classList.remove("show");
   }
 }
+
+const selectedProduct = localStorage.getItem('selectedProduct');
+    if (selectedProduct === null) {
+      document.getElementById('product').value = "No product selected";
+    } else {
+      document.getElementById('product').value = selectedProduct;
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const orderedProduct = document.getElementById("product").value;
+
+      document.getElementById("orderedProduct").textContent = orderedProduct;
+      document.getElementById("confirmationMessage").style.display = "block";
+
+      return false;
+    }
+
+    function redirectToHomePage(url) {
+      window.location.href = url;
+    }

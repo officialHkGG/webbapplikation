@@ -89,20 +89,27 @@
   </style>
 </head>
 <body>
+  
   <div class="container">
     <h1>Fyll i din beställning</h1>
-    <form id="orderForm" onsubmit="return handleSubmit(event)">
+    <form id="orderForm" onsubmit="return submitOrderForm(event)">
       <label for="name">Namn:</label>
       <input type="text" id="name" required>
 
-      <label for="phone">Telefon:</label>
-      <input type="tel" id="phone" required>
-
       <label for="email">E-post:</label>
-      <input type="email" id="email" required>
+      <input type="text" id="email" required>
+
+      <label for="phone">Telefon:</label>
+      <input type="text" id="phone" required>
 
       <label for="address">Leveransadress:</label>
-      <textarea id="address" required></textarea>
+      <input type="text" id="address" required>
+
+      <label for="postalCode">Postnummer:</label>
+      <input type="text" id="postalCode" required>
+
+      <label for="city">Postort:</label>
+      <input type="text" id="city" required>
 
       <label for="product">Produkt:</label>
       <input type="text" id="product" required readonly>
@@ -118,28 +125,6 @@
     </form>
   </div>
 
-  <script>
-    
-    const selectedProduct = localStorage.getItem('selectedProduct');
-    if (selectedProduct) {
-      
-      document.getElementById('product').value = selectedProduct;
-    }
-
-    function handleSubmit(event) {
-      event.preventDefault();
-
-      const orderedProduct = document.getElementById("product").value;
-
-      document.getElementById("orderedProduct").textContent = orderedProduct;
-      document.getElementById("confirmationMessage").style.display = "block";
-
-      return false;
-    }
-
-    function redirectToHomePage(url) {
-      window.location.href = url;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
